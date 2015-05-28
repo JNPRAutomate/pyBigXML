@@ -53,6 +53,8 @@ class XMLHandler(xml.sax.ContentHandler):
           chars = self._get_chars()
           if len(chars) > 0:
               self._insert(chars)
+              b = dict(izip(i, i))
+              d = dict(itertools.izip_longest(*[iter(self.current_list))] * 2, fillvalue=""))
           self.current = ""
           self.current_list.pop()
           self.depth = self.depth - 1

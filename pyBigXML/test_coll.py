@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
-import collections
+import xmltodict
+import pprint
 
-d = {'a':1,'b':2}
+d = xmltodict.parse(open("/Users/rcameron/Desktop/show_routes-27MAY2015.xml"), process_namespaces=False)
